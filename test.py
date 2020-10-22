@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE = 'http://35.221.178.255:8080/'
+BASE = 'http://0.0.0.0:8080/'
 url = BASE + 'predict/post'
 
 
