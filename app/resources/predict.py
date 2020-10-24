@@ -21,6 +21,7 @@ class Predict(Resource):
     def get(self):
         return 'testhaha'
 
+    @celery.task()
     def post(self):
         if request.is_json:
             contents = request.get_json()
