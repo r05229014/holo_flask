@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource, reqparse
 from app.resources.predict import Predict
+from flask_celery import make_celery
+
 
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
+    app.config['CELERY_BROKE_URL'] = 'localhost'
     api = Api(app)
     api.add_resource(Predict, '/predict')
     return app
